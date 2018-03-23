@@ -1,5 +1,5 @@
 const http = require('http')
-const PORT = process.ENV.PORT
+const PORT = process.env.PORT
 
 // Simple service that returns an object that contains the unix timestamp
 // and a natural language date. 
