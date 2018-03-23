@@ -34,7 +34,8 @@ http.createServer( (req,res) => {
     console.log('No date specfied in URL')
   }
   if (req.method === 'GET' && req.url.length >= 2) {
-
+    
+    // Index 0 is a / character of the url which we don't need
     let timeInput = req.url.substring(1).replace(/%20/g, " ")
     let timeInteger = Number.parseInt(timeInput, 10)
     if (Number.isInteger(timeInteger)) {
@@ -54,4 +55,4 @@ http.createServer( (req,res) => {
     }
   }
 
-}).listen(PORT, () => console.log(`Server listening on ${ PORT}`))
+}).listen(PORT, () => console.log(`Server listening on ${ PORT }`))
