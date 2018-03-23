@@ -15,6 +15,13 @@ http.createServer( (req,res) => {
     console.log(err)
   });
 
+  if (req.method === 'GET' && req.url === '/favicon.ico'){
+    res.statusCode = 204
+    res.end()
+    console.log('Handled the get favicon request')
+    return true
+  }
+
   if (req.method === 'GET' && req.url === '/') {
     
     let instructions = 'Enter a date in natural language or milliseconds in the url'
