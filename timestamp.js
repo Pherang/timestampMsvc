@@ -1,4 +1,5 @@
 const http = require('http')
+const PORT = process.ENV.PORT
 
 // Simple service that returns an object that contains the unix timestamp
 // and a natural language date. 
@@ -53,5 +54,4 @@ http.createServer( (req,res) => {
     }
   }
 
-}).listen(8080);
-console.log('Server listening on 8080')
+}).listen(PORT, () => console.log(`Server listening on ${ PORT}`))
